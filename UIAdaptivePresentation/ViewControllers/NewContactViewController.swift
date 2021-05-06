@@ -44,9 +44,9 @@ class NewContactViewController: UIViewController {
         guard let lastName = lastNameTextField.text else { return }
         
         let contact = Contact(name: firstName, surname: lastName)
-        StorageManager.shared.save(contact: contact.fullName)
+        StorageManager.shared.save(contact: contact)
         
-        delegate.saveContact(contact.fullName)
+        delegate.saveContact(contact)
         dismiss(animated: true)
     }
 }
