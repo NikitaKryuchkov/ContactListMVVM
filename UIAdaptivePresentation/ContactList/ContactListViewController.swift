@@ -9,21 +9,29 @@
 import UIKit
 
 protocol NewContactViewControllerDelegate {
-    func saveContact(_ contact: Contact)
+    func saveContact(firstName: String, lastName: String)
 }
 
 class ContactListViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    private var contacts: [Contact] = []
+    
+    private var viewModel: ContactListViewModelProtocol! {
+        didSet{
+            viewModel.fetchContacts {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        contacts = StorageManager.shared.fetchContacts()
+        viewModel = ContactListViewModel()
+        //contacts = StorageManager.shared.fetchContacts()
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let newContactVC = segue.destination as! NewContactViewController
         newContactVC.delegate = self
     }
@@ -31,26 +39,28 @@ class ContactListViewController: UIViewController {
 
 // MARK: - UITAbleViewDataSource
 extension ContactListViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        contacts.count
+        viewModel.numberOfRows()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Contact", for: indexPath)
-        let contact = contacts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Contact", for: indexPath) //as! ContactTableViewCellName
+       // cell.viewModel = viewModel.cellViewModel(at: indexPath)
+        let contact = viewModel.cellViewModel(at: indexPath)
         var content = cell.defaultContentConfiguration()
-        content.text = contact.fullName
+        content.text = contact.contactFullName
         cell.contentConfiguration = content
         return cell
     }
+
 }
 
 // MARK: - UITableViewDelegate
 extension ContactListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            contacts.remove(at: indexPath.row)
-            StorageManager.shared.deleteContact(at: indexPath.row)
+            viewModel.removeContact(at: indexPath)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
@@ -58,8 +68,9 @@ extension ContactListViewController: UITableViewDelegate {
 
 // MARK: - NewContactViewControllerDelegate
 extension ContactListViewController: NewContactViewControllerDelegate {
-    func saveContact(_ contact: Contact) {
-        contacts.append(contact)
-        tableView.reloadData()
+    func saveContact(firstName: String, lastName: String) {
+        self.viewModel.saveContact(firstName: firstName, lastName: lastName) {
+            self.tableView.reloadData()
+        }
     }
 }

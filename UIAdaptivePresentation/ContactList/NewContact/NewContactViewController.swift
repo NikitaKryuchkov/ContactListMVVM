@@ -14,11 +14,14 @@ class NewContactViewController: UIViewController {
     @IBOutlet var firstNameTextField: UITextField!
     @IBOutlet var lastNameTextField: UITextField!
     
+    var viewModel: NewContactViewModelProtocol!
+    
     var delegate: NewContactViewControllerDelegate!
+    
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        viewModel = NewContactViewModel()
         firstNameTextField.addTarget(
             self,
             action: #selector(firstNameTextFieldDidChanged),
@@ -35,18 +38,14 @@ class NewContactViewController: UIViewController {
     }
     
     @objc private func firstNameTextFieldDidChanged() {
-        guard let firstName = firstNameTextField.text else { return }
-        doneButton.isEnabled = !firstName.isEmpty ? true : false
+        viewModel.firstNameField = firstNameTextField.text
+        doneButton.isEnabled = viewModel.textFieldDidChange() 
     }
     
     private func saveAndExit() {
         guard let firstName = firstNameTextField.text else { return }
         guard let lastName = lastNameTextField.text else { return }
-        
-        let contact = Contact(name: firstName, surname: lastName)
-        StorageManager.shared.save(contact: contact)
-        
-        delegate.saveContact(contact)
+        delegate.saveContact(firstName: firstName, lastName: lastName)
         dismiss(animated: true)
     }
 }
