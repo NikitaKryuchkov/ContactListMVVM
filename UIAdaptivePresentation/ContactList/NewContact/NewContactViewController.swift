@@ -2,7 +2,7 @@
 //  NewContactViewController.swift
 //  UIAdaptivePresentation
 //
-//  Created by Alexey Efimov on 04/10/2019.
+//  Created by Nikita Kryuchkov on 17.08.2021.
 //  Copyright © 2019 Alexey Efimov. All rights reserved.
 //
 
@@ -17,8 +17,7 @@ class NewContactViewController: UIViewController {
     var viewModel: NewContactViewModelProtocol!
     
     var delegate: NewContactViewControllerDelegate!
-    
-        
+            
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = NewContactViewModel()

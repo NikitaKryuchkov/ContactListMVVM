@@ -19,7 +19,7 @@
 		FA52339D26CBFC190024C11F /* ContactListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52339C26CBFC190024C11F /* ContactListViewModelProtocol.swift */; };
 		FA5233A026CC1F880024C11F /* NewContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52339F26CC1F880024C11F /* NewContactViewModel.swift */; };
 		FA85DA0426CBEC28005BC4A0 /* CoursCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85DA0326CBEC28005BC4A0 /* CoursCellViewModel.swift */; };
-		FA85DA0626CBEF65005BC4A0 /* ContactTableViewCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85DA0526CBEF65005BC4A0 /* ContactTableViewCellName.swift */; };
+		FA85DA0626CBEF65005BC4A0 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85DA0526CBEF65005BC4A0 /* ContactTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,7 @@
 		FA52339C26CBFC190024C11F /* ContactListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewModelProtocol.swift; sourceTree = "<group>"; };
 		FA52339F26CC1F880024C11F /* NewContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewModel.swift; sourceTree = "<group>"; };
 		FA85DA0326CBEC28005BC4A0 /* CoursCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursCellViewModel.swift; sourceTree = "<group>"; };
-		FA85DA0526CBEF65005BC4A0 /* ContactTableViewCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCellName.swift; sourceTree = "<group>"; };
+		FA85DA0526CBEF65005BC4A0 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				FA85DA0326CBEC28005BC4A0 /* CoursCellViewModel.swift */,
-				FA85DA0526CBEF65005BC4A0 /* ContactTableViewCellName.swift */,
+				FA85DA0526CBEF65005BC4A0 /* ContactTableViewCell.swift */,
 			);
 			path = ContactCell;
 			sourceTree = "<group>";
@@ -230,7 +230,7 @@
 				FA85DA0426CBEC28005BC4A0 /* CoursCellViewModel.swift in Sources */,
 				A83EEFBF2644736E004EFEDA /* StorageManager.swift in Sources */,
 				FA5233A026CC1F880024C11F /* NewContactViewModel.swift in Sources */,
-				FA85DA0626CBEF65005BC4A0 /* ContactTableViewCellName.swift in Sources */,
+				FA85DA0626CBEF65005BC4A0 /* ContactTableViewCell.swift in Sources */,
 				A8FC0E4E23474C680002FD14 /* NewContactViewController.swift in Sources */,
 				A8FC0E3C2347466F0002FD14 /* SceneDelegate.swift in Sources */,
 			);
@@ -379,7 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GBTTU32HS2;
+				DEVELOPMENT_TEAM = X56KS4SF62;
 				INFOPLIST_FILE = UIAdaptivePresentation/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -396,8 +396,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GBTTU32HS2;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UIAdaptivePresentation/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -405,6 +405,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.swiftbook.UIAdaptivePresentation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

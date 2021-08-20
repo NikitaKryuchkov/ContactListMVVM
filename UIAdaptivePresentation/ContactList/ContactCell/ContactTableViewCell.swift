@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContactTableViewCellName: UITableViewCell {
+class ContactTableViewCell: UITableViewCell {
     
     var viewModel: ContactCellViewModelProtocol! {
         didSet{

@@ -2,7 +2,7 @@
 //  StorageManager.swift
 //  UIAdaptivePresentation
 //
-//  Created by Alexey Efimov on 06.05.2021.
+//  Created by Nikita Kryuchkov on 17.08.2021.
 //  Copyright © 2021 Alexey Efimov. All rights reserved.
 //
 

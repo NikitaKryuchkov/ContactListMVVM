@@ -15,7 +15,7 @@ protocol ContactCellViewModelProtocol {
 
 class ContactCellViewModel: ContactCellViewModelProtocol {
     var contactFullName: String {
-        contact.name
+        contact.fullName
     }
     
     private let contact: Contact

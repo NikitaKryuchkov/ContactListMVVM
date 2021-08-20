@@ -16,7 +16,6 @@ class ContactListViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    
     private var viewModel: ContactListViewModelProtocol! {
         didSet{
             viewModel.fetchContacts {
@@ -28,7 +27,6 @@ class ContactListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = ContactListViewModel()
-        //contacts = StorageManager.shared.fetchContacts()
     }
     
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,15 +43,10 @@ extension ContactListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Contact", for: indexPath) //as! ContactTableViewCellName
-       // cell.viewModel = viewModel.cellViewModel(at: indexPath)
-        let contact = viewModel.cellViewModel(at: indexPath)
-        var content = cell.defaultContentConfiguration()
-        content.text = contact.contactFullName
-        cell.contentConfiguration = content
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Contact", for: indexPath) as! ContactTableViewCell
+        cell.viewModel = viewModel.cellViewModel(at: indexPath)
         return cell
     }
-
 }
 
 // MARK: - UITableViewDelegate

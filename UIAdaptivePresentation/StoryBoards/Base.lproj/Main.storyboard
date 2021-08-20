@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tsL-gZ-0tJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tsL-gZ-0tJ">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,10 +18,10 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A23-o8-Vjs">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Contact" id="SfO-Bj-x4D">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Contact" id="SfO-Bj-x4D" customClass="ContactTableViewCell" customModule="UIAdaptivePresentation" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SfO-Bj-x4D" id="Tp8-eM-XnS">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -34,14 +35,14 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A23-o8-Vjs" secondAttribute="trailing" id="3a4-ql-4lV"/>
                             <constraint firstItem="A23-o8-Vjs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="51k-tv-ePc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="A23-o8-Vjs" secondAttribute="bottom" id="Qaf-2c-Az8"/>
                             <constraint firstItem="A23-o8-Vjs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dvX-ze-H6y"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Contacts" id="NbK-BD-uRg">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="1yd-3c-nDJ">
@@ -99,7 +100,8 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="WqF-LR-mfi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="pNk-Lc-e1u" firstAttribute="leading" secondItem="WqF-LR-mfi" secondAttribute="leading" constant="40" id="EiE-bY-YXm"/>
                             <constraint firstItem="f91-EQ-9AY" firstAttribute="trailing" secondItem="WqF-LR-mfi" secondAttribute="trailing" id="Gax-J9-sPG"/>
@@ -108,7 +110,6 @@
                             <constraint firstItem="f91-EQ-9AY" firstAttribute="leading" secondItem="WqF-LR-mfi" secondAttribute="leading" id="ZAJ-8u-0eC"/>
                             <constraint firstItem="WqF-LR-mfi" firstAttribute="trailing" secondItem="pNk-Lc-e1u" secondAttribute="trailing" constant="40" id="ho3-5a-A7s"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="WqF-LR-mfi"/>
                     </view>
                     <connections>
                         <outlet property="doneButton" destination="o3v-fW-6BD" id="igI-LO-KV5"/>
@@ -139,4 +140,9 @@
             <point key="canvasLocation" x="138.40000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
