@@ -9,14 +9,16 @@
 import Foundation
 
 protocol NewContactViewModelProtocol {
-    var firstNameField: String? { get set }
-    func textFieldDidChange() -> Bool
+    var firstNameField: String { get set }
+    var isFavorite: Bool { get }
 }
 
 class NewContactViewModel: NewContactViewModelProtocol {
-    var firstNameField: String?
-    
-    func textFieldDidChange() -> Bool {
-        return firstNameField != nil
+    var firstNameField = ""
+    var isFavorite: Bool {
+        get {
+            !firstNameField.isEmpty ? true : false
+        }
     }
+    
 }

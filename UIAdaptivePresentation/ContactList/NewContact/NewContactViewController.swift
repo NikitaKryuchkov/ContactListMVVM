@@ -24,7 +24,7 @@ class NewContactViewController: UIViewController {
         firstNameTextField.addTarget(
             self,
             action: #selector(firstNameTextFieldDidChanged),
-            for: .editingChanged
+            for: .allEditingEvents
         )
     }
     
@@ -37,8 +37,8 @@ class NewContactViewController: UIViewController {
     }
     
     @objc private func firstNameTextFieldDidChanged() {
-        viewModel.firstNameField = firstNameTextField.text
-        doneButton.isEnabled = viewModel.textFieldDidChange() 
+        viewModel.firstNameField = firstNameTextField.text ?? ""
+        doneButton.isEnabled = viewModel.isFavorite
     }
     
     private func saveAndExit() {
