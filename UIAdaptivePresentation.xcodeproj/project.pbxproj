@@ -20,7 +20,6 @@
 		FA5233A026CC1F880024C11F /* NewContactViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA52339F26CC1F880024C11F /* NewContactViewModel.swift */; };
 		FA85DA0426CBEC28005BC4A0 /* CoursCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85DA0326CBEC28005BC4A0 /* CoursCellViewModel.swift */; };
 		FA85DA0626CBEF65005BC4A0 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85DA0526CBEF65005BC4A0 /* ContactTableViewCell.swift */; };
-		FA92C8FE26D04DE8001ED206 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA92C8FD26D04DE8001ED206 /* Box.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		FA52339F26CC1F880024C11F /* NewContactViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewModel.swift; sourceTree = "<group>"; };
 		FA85DA0326CBEC28005BC4A0 /* CoursCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursCellViewModel.swift; sourceTree = "<group>"; };
 		FA85DA0526CBEF65005BC4A0 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
-		FA92C8FD26D04DE8001ED206 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				FA97436126C98E3B007F1B0A /* ContactList */,
-				FA92C8FC26D04D6E001ED206 /* Helpers */,
 				A83C04F3241134F500F3E3E5 /* Models */,
 				A8FC0E5623474F430002FD14 /* Services */,
 				A8FC0E5123474D970002FD14 /* StoryBoards */,
@@ -142,14 +139,6 @@
 				FA85DA0526CBEF65005BC4A0 /* ContactTableViewCell.swift */,
 			);
 			path = ContactCell;
-			sourceTree = "<group>";
-		};
-		FA92C8FC26D04D6E001ED206 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				FA92C8FD26D04DE8001ED206 /* Box.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		FA97436126C98E3B007F1B0A /* ContactList */ = {
@@ -239,7 +228,6 @@
 				A8FC0E3E2347466F0002FD14 /* ContactListViewController.swift in Sources */,
 				A8FC0E3A2347466F0002FD14 /* AppDelegate.swift in Sources */,
 				FA85DA0426CBEC28005BC4A0 /* CoursCellViewModel.swift in Sources */,
-				FA92C8FE26D04DE8001ED206 /* Box.swift in Sources */,
 				A83EEFBF2644736E004EFEDA /* StorageManager.swift in Sources */,
 				FA5233A026CC1F880024C11F /* NewContactViewModel.swift in Sources */,
 				FA85DA0626CBEF65005BC4A0 /* ContactTableViewCell.swift in Sources */,
