@@ -38,7 +38,7 @@ class NewContactViewController: UIViewController {
     
     @objc private func firstNameTextFieldDidChanged() {
         viewModel.firstNameField = firstNameTextField.text ?? ""
-        doneButton.isEnabled = viewModel.isFavorite
+        doneButton.isEnabled = viewModel.statusButtonDone
     }
     
     private func saveAndExit() {

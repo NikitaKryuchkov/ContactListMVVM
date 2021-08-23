@@ -10,12 +10,12 @@ import Foundation
 
 protocol NewContactViewModelProtocol {
     var firstNameField: String { get set }
-    var isFavorite: Bool { get }
+    var statusButtonDone: Bool { get }
 }
 
 class NewContactViewModel: NewContactViewModelProtocol {
     var firstNameField = ""
-    var isFavorite: Bool {
+    var statusButtonDone: Bool {
         get {
             !firstNameField.isEmpty ? true : false
         }
